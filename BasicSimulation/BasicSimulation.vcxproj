@@ -18,6 +18,19 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Body.h" />
+    <ClInclude Include="src\Instance.h" />
+    <ClInclude Include="src\Position.h" />
+    <ClInclude Include="src\Utils.h" />
+    <ClInclude Include="src\Velocity.h" />
+    <ClInclude Include="src\Wall.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Body.cpp" />
+    <ClCompile Include="src\Instance.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -134,19 +147,6 @@
       <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;winmm.lib;gdi32.lib;opengl32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\M1OEP-dwhooley\Body.cpp" />
-    <ClCompile Include="..\..\M1OEP-dwhooley\Instance.cpp" />
-    <ClCompile Include="..\..\M1OEP-dwhooley\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\M1OEP-dwhooley\Body.h" />
-    <ClInclude Include="..\..\M1OEP-dwhooley\Instance.h" />
-    <ClInclude Include="..\..\M1OEP-dwhooley\Position.h" />
-    <ClInclude Include="..\..\M1OEP-dwhooley\Utils.h" />
-    <ClInclude Include="..\..\M1OEP-dwhooley\Velocity.h" />
-    <ClInclude Include="..\..\M1OEP-dwhooley\Wall.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
