@@ -11,18 +11,19 @@ class Body {
     double fTraction;
     Velocity fVelocity;
     Position fPosition;
+    int fInitiative;
 
     public:
 
     enum RotationDirection {CLOCK, COUNTERCLOCK};
 
-    Body(Position pPosition, double pMass, double pTraction);
+    Body(Position pPosition, double pMass, double pTraction, int pInitiative);
 
-    bool incrementPosition(double pIncX, double pIncY);
+    virtual bool incrementPosition(double pIncX, double pIncY);
 
-    bool rotate(RotationDirection pRotation, double pMagnitude);
+    virtual bool rotate(RotationDirection pRotation, double pMagnitude);
 
-    void remove();
+    virtual void remove();
 
     //Setters::
     void updateVelocity(Velocity& pNewVelocity) {

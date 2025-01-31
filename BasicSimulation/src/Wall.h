@@ -8,8 +8,8 @@ private:
     double fLength;
 
 public:
-    Wall(Position pPosition, double pTraction, double pLength)
-    : Body(pPosition, 100, pTraction),
+    Wall(Position pPosition, double pTraction, double pLength, int pInitiative)
+    : Body(pPosition, 100, pTraction, pInitiative),
     fLength(pLength){
 
     }

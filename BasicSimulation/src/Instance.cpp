@@ -1,6 +1,3 @@
-//
-// Created by danie on 1/22/2025.
-//
 #include "Instance.h"
 
 #include <vector>
@@ -10,8 +7,14 @@
 
 using std::vector;
 
+
+//If pBody1 or pBody2 is not a wall, update their velocities post collision
 void Instance::collide(Body& pBody1, Body& pBody2) {
     vector<Velocity> newVelocities = utils::calcCollide(pBody1, pBody2);
-    pBody1.updateVelocity(newVelocities[0]);
-    pBody2.updateVelocity(newVelocities[1]);
+    if (!dynamic_cast<Wall*>(&pBody1)) {
+        pBody1.updateVelocity(newVelocities[0]);
+    }
+    if (!dynamic_cast<Wall*>(&pBody1)) {
+        pBody2.updateVelocity(newVelocities[1]);
+    }
 }

@@ -2,10 +2,11 @@
 #include "Body.h"
 #include "Utils.h"
 
-Body::Body(Position pPosition, double pMass, double pTraction) :
+Body::Body(Position pPosition, double pMass, double pTraction, int pInitiative) :
     fPosition(pPosition),
     fMass(pMass),
     fTraction(pTraction),
+    fInitiative(pInitiative),
     fVelocity(Velocity(0,0,0,0)){
 }
 
