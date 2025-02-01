@@ -17,6 +17,10 @@ bool Body::incrementPosition(float pIncX, float pIncY) {
     return true;
 }
 
+void Body::updateVelocity(Velocity& pNewVelocity) {
+    fVelocity = pNewVelocity;
+}
+
 bool Body::rotate(RotationDirection pRotation, float pMagnitude) {
     float result = fPosition.sfOrientation;
     switch (pRotation) {
@@ -29,7 +33,7 @@ bool Body::rotate(RotationDirection pRotation, float pMagnitude) {
     return true;
 }
 
-void Body::remove() {
-    fMass = 0;
-    fVelocity = Velocity(0,0,0,0);
+void Body::collide(std::shared_ptr<Body> otherBody) {
+    Velocity v = utils::calcCollide(this, otherBody);
+    updateVelocity(v);
 }

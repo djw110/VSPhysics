@@ -8,18 +8,16 @@ using std::vector;
 
 class Instance {
 private:
-    vector<Body> fCurrentBodies;
+    vector<std::shared_ptr<Body>> fCurrentBodies;
     float fGravitationScale;
     sf::RenderWindow& fWindow;
 
 public:
     Instance(sf::RenderWindow& pWindow);
 
-    bool addBody(Body& pBody);
+    bool addBody(std::shared_ptr<Body>);
 
-    void removeBody(Body& pBody);
-
-    static void collide(Body& pBody1, Body& pBody2);
+    void removeBody(std::shared_ptr<Body>);
 };
 
 #endif //INSTANCE_H

@@ -25,18 +25,17 @@ class Body {
 
     virtual bool rotate(RotationDirection pRotation, float pMagnitude);
 
-    virtual void remove();
+    virtual void collide(std::shared_ptr<Body> otherBody);
 
     //Setters::
-    void updateVelocity(Velocity& pNewVelocity) {
-        fVelocity = pNewVelocity;
-    }
+    void updateVelocity(Velocity& pNewVelocity);
 
     //Getters::
     Position getPosition() const {return fPosition;}
     float getMass() const {return fMass;}
     float getTraction() const {return fTraction;}
     Velocity getVelocity() const {return fVelocity;}
+    sf::Shape& getShape() { return fShape; }
 
 };
 
