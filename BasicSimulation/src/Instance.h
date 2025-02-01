@@ -9,10 +9,11 @@ using std::vector;
 class Instance {
 private:
     vector<Body> fCurrentBodies;
-    int fGravitationScale;
+    float fGravitationScale;
+    sf::RenderWindow& fWindow;
 
-    public:
-    Instance();
+public:
+    Instance(sf::RenderWindow& pWindow);
 
     bool addBody(Body& pBody);
 

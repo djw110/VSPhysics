@@ -5,13 +5,14 @@
 
 class Wall : public Body {
 private:
-    double fLength;
+    sf::RectangleShape fRectangleShape;
+    float fLength;
 
 public:
-    Wall(Position pPosition, double pTraction, double pLength, int pInitiative)
-    : Body(pPosition, 100, pTraction, pInitiative),
-    fLength(pLength){
-
+    Wall(Position pPosition, float pTraction, float pLength, int pInitiative): 
+        fRectangleShape({fLength,1}),
+        Body(pPosition, 100, pTraction, pInitiative, fRectangleShape),
+        fLength(pLength){
     }
  };
 

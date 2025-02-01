@@ -33,6 +33,9 @@
     <ClInclude Include="src\Instance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Ball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Body.cpp">

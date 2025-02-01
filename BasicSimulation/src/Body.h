@@ -3,25 +3,27 @@
 
 #include "Velocity.h"
 #include "Position.h"
+#include <SFML/Graphics.hpp>
 
 class Body {
-    private:
+    protected:
 
-    double fMass;
-    double fTraction;
+    float fMass;
+    float fTraction;
     Velocity fVelocity;
     Position fPosition;
+    sf::Shape& fShape;
     int fInitiative;
 
     public:
 
     enum RotationDirection {CLOCK, COUNTERCLOCK};
 
-    Body(Position pPosition, double pMass, double pTraction, int pInitiative);
+    Body(Position pPosition, float pMass, float pTraction, int pInitiative, sf::Shape& pShape);
 
-    virtual bool incrementPosition(double pIncX, double pIncY);
+    virtual bool incrementPosition(float pIncX, float pIncY);
 
-    virtual bool rotate(RotationDirection pRotation, double pMagnitude);
+    virtual bool rotate(RotationDirection pRotation, float pMagnitude);
 
     virtual void remove();
 
@@ -32,8 +34,8 @@ class Body {
 
     //Getters::
     Position getPosition() const {return fPosition;}
-    double getMass() const {return fMass;}
-    double getTraction() const {return fTraction;}
+    float getMass() const {return fMass;}
+    float getTraction() const {return fTraction;}
     Velocity getVelocity() const {return fVelocity;}
 
 };

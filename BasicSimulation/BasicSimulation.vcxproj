@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Ball.h" />
     <ClInclude Include="src\Body.h" />
     <ClInclude Include="src\Instance.h" />
     <ClInclude Include="src\Position.h" />

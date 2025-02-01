@@ -1,11 +1,18 @@
 #include "Instance.h"
-
-#include <vector>
-#include "Body.h"
 #include "Wall.h"
 #include "Utils.h"
+#include "Ball.h"
 
 using std::vector;
+
+Instance::Instance(sf::RenderWindow& pWindow) : fWindow(pWindow){
+    fGravitationScale = 9.807;
+}
+
+bool Instance::addBody(Body& pBody) {
+    fCurrentBodies.push_back(pBody);
+
+;}
 
 
 //If pBody1 or pBody2 is not a wall, update their velocities post collision
