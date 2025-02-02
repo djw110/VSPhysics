@@ -9,10 +9,11 @@ private:
     float fRadius;
 
 public:
-    Ball(Position pPosition, float pTraction, float pLength, int pInitiative) :
-        fCircleShape(fRadius),
-        Body(pPosition, 100, pTraction, pInitiative, fCircleShape),
-        fRadius(pLength) {
+    Ball(Position pPosition, float pMass, float pTraction, float pRadius, int pInitiative) :
+        fRadius(pRadius),
+        fCircleShape(pRadius),
+        Body(pPosition, pMass, pTraction, pInitiative, fCircleShape)
+        {
     }
 };
 

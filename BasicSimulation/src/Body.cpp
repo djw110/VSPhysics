@@ -26,8 +26,10 @@ bool Body::rotate(RotationDirection pRotation, float pMagnitude) {
     switch (pRotation) {
         case CLOCK:
             result += pMagnitude;
+            break;
         case COUNTERCLOCK:
             result -= pMagnitude;
+            break;
     }
     fPosition.sfOrientation = utils::standardAngle(result);
     return true;

@@ -2,7 +2,8 @@
 #define INSTANCE_H
 
 #include <vector>
-#include "Body.h"
+#include "Ball.h"
+#include "Wall.h"
 
 using std::vector;
 
@@ -14,6 +15,8 @@ private:
 
 public:
     Instance(sf::RenderWindow& pWindow);
+
+    void drawBodies();
 
     bool addBody(std::shared_ptr<Body>);
 

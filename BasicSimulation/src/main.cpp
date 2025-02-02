@@ -5,7 +5,8 @@
  */
 int main() {
 	auto window =  sf::RenderWindow(sf::VideoMode({1200,800}),"Game", sf::Style::Close | sf::Style::Titlebar);
-	sf::CircleShape body1(100.f);
+	auto mainInstance = std::make_unique<Instance>(window);
+	auto ball1 = std::make_shared<Ball>(Position(0,0,0),1,1,100,1);
 
 	const auto onClose = [&window](const sf::Event::Closed&){
 			window.close();
@@ -27,10 +28,12 @@ int main() {
 			}
 	};
 
+	mainInstance->addBody(ball1);
+
 	while (window.isOpen()) {
 		window.handleEvents(onClose, onKeyPressed, onFocusGain, onFocusLost);
 		window.clear();
-		window.draw(body1);
+		mainInstance->drawBodies();
 		window.display();
 	}
 
