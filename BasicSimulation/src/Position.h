@@ -1,6 +1,7 @@
 #ifndef POSITION_H
 #define POSITION_H
 
+//Contains information about a Body's position over the x,y axes
 struct Position {
     float sfCenterX;
     float sfCenterY;

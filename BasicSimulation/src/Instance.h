@@ -1,26 +1,37 @@
 #ifndef INSTANCE_H
 #define INSTANCE_H
 
-#include <vector>
+#include <unordered_map>
 #include "Ball.h"
 #include "Wall.h"
 
 using std::vector;
 
+//Manages the collection of bodies as a whole
 class Instance {
 private:
-    vector<std::shared_ptr<Body>> fCurrentBodies;
-    float fGravitationScale;
+    
+    //List of pointers to every added body
+    std::unordered_map<int, std::shared_ptr<Body>> fActiveBodies;
+
+    float fGravScale;
+    int fNextID = 0;
+
+    //Application window
     sf::RenderWindow& fWindow;
 
 public:
     Instance(sf::RenderWindow& pWindow);
 
+    //Draws all active bodies to the window
     void drawBodies();
 
-    bool addBody(std::shared_ptr<Body>);
+    //Add body to activeBodies
+    bool addBall(Position pPosition, float pMass, float pTraction, float pRadius);
+    bool addWall(Position pPosition, float pTraction, float pLength);
 
-    void removeBody(std::shared_ptr<Body>);
+    //Removes body from activeBodies
+    void removeBody(int pID);
 };
 
 #endif //INSTANCE_H

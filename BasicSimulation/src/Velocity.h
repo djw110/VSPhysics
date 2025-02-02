@@ -1,6 +1,7 @@
 #ifndef VELOCITY_H
 #define VELOCITY_H
 
+//Contains information about a Body's behavior over the x,y axes
 struct Velocity {
     float sfSpeedX;
     float sfSpeedY;

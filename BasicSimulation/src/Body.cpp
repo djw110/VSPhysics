@@ -1,15 +1,13 @@
-#include <vector>
 #include "Body.h"
 #include "Utils.h"
 
-Body::Body(Position pPosition, float pMass, float pTraction, int pInitiative, sf::Shape& pShape) :
+Body::Body(Position pPosition, float pMass, float pTraction, sf::Shape& pShape, int pID) :
     fPosition(pPosition),
     fMass(pMass),
     fTraction(pTraction),
-    fInitiative(pInitiative),
     fVelocity(Velocity(0,0,0,0)),
-    fShape(pShape){
-}
+    fShape(pShape),
+    fID(pID) { }
 
 bool Body::incrementPosition(float pIncX, float pIncY) {
     fPosition.sfCenterX += pIncX;
