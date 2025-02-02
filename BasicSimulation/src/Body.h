@@ -29,6 +29,7 @@ class Body {
 
     public:
 
+    //Used for rotate function
     enum RotationDirection {CLOCK, COUNTERCLOCK};
 
     Body(Position pPosition, float pMass, float pTraction, sf::Shape& pShape, int pID);

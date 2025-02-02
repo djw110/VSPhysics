@@ -9,6 +9,7 @@ Body::Body(Position pPosition, float pMass, float pTraction, sf::Shape& pShape, 
     fShape(pShape),
     fID(pID) { }
 
+//Increment center position based on current position
 bool Body::incrementPosition(float pIncX, float pIncY) {
     fPosition.sfCenterX += pIncX;
     fPosition.sfCenterY += pIncY;
@@ -19,6 +20,7 @@ void Body::updateVelocity(Velocity& pNewVelocity) {
     fVelocity = pNewVelocity;
 }
 
+//Calculate final rotation based on current rotation, then standardize result between 0-2pi
 bool Body::rotate(RotationDirection pRotation, float pMagnitude) {
     float result = fPosition.sfOrientation;
     switch (pRotation) {
@@ -33,6 +35,7 @@ bool Body::rotate(RotationDirection pRotation, float pMagnitude) {
     return true;
 }
 
+//Calculate new velocity for *this given a collision with another body, then update
 void Body::collide(std::shared_ptr<Body> otherBody) {
     Velocity v = utils::calcCollide(this, otherBody);
     updateVelocity(v);
