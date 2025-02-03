@@ -12,7 +12,7 @@ Instance::Instance(sf::RenderWindow& pWindow) : fWindow(pWindow){
 // "Pair" is a key,value pair in the dictionary of Body pointers
 void Instance::drawBodies() {
     for (const auto& pair: fActiveBodies) {
-        fWindow.draw(pair.second->getShape());
+        fWindow.draw(*pair.second->getShape());
     }
 }
 

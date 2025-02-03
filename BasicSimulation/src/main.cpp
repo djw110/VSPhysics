@@ -1,4 +1,5 @@
 #include "Instance.h"
+#include <random>
 
 /**
  * TODO: Hotkeys (a for add, r for remove, h for hit, p for pause
@@ -10,7 +11,6 @@ int main() {
 	//Create application window, game instance, and a testing body
 	auto window =  sf::RenderWindow(sf::VideoMode({1200,800}),"Game", sf::Style::Close | sf::Style::Titlebar);
 	auto mainInstance = std::make_unique<Instance>(window);
-	mainInstance->addBall(Position(0, 0, 0), 1, 1, 100);
 
 	//Close application window and stop instance on user selection
 	const auto onClose = [&window](const sf::Event::Closed&){
@@ -24,12 +24,20 @@ int main() {
 	const auto onFocusLost = [&window](const sf::Event::FocusLost&) {	};
 
 	//Handle user hotkey input (1 key at a time)
-	const auto onKeyPressed = [&window](const sf::Event::KeyPressed& keyPressed){
+	const auto onKeyPressed = [&window, &mainInstance](const sf::Event::KeyPressed& keyPressed){
 			switch (keyPressed.scancode) {
 
 				//Close and stop instance on input "Esc"
 				case sf::Keyboard::Scancode::Escape:
 					window.close();
+					break;
+
+				case sf::Keyboard::Scancode::A:
+					std::random_device rd;
+					std::mt19937 gen(rd());
+					std::uniform_int_distribution<> distribx(1, 1199);
+					std::uniform_int_distribution<> distriby(1, 799);
+					mainInstance->addBall(Position(distribx(gen), distriby(gen), 0), 1, 1, 40);
 					break;
 
 			}

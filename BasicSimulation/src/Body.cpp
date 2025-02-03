@@ -1,13 +1,17 @@
 #include "Body.h"
 #include "Utils.h"
 
-Body::Body(Position pPosition, float pMass, float pTraction, sf::Shape& pShape, int pID) :
+
+//Initialize all fields. Set position of the SFML "Shape" in the render window to the correct position.
+Body::Body(Position pPosition, float pMass, float pTraction, std::shared_ptr<sf::Shape>pShape, int pID) :
     fPosition(pPosition),
     fMass(pMass),
     fTraction(pTraction),
-    fVelocity(Velocity(0,0,0,0)),
+    fVelocity(Velocity(0, 0, 0, 0)),
     fShape(pShape),
-    fID(pID) { }
+    fID(pID) {
+    fShape->setPosition({ fPosition.sfCenterX,fPosition.sfCenterY });
+}
 
 //Increment center position based on current position
 bool Body::incrementPosition(float pIncX, float pIncY) {

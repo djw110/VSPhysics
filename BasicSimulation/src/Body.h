@@ -24,7 +24,7 @@ class Body {
     float fTraction;
     Velocity fVelocity;
     Position fPosition;
-    sf::Shape& fShape;
+    std::shared_ptr<sf::Shape> fShape;
     int fID;
 
     public:
@@ -32,7 +32,7 @@ class Body {
     //Used for rotate function
     enum RotationDirection {CLOCK, COUNTERCLOCK};
 
-    Body(Position pPosition, float pMass, float pTraction, sf::Shape& pShape, int pID);
+    Body(Position pPosition, float pMass, float pTraction, std::shared_ptr<sf::Shape> pShape, int pID);
 
     virtual bool incrementPosition(float pIncX, float pIncY);
 
@@ -48,7 +48,7 @@ class Body {
     float getMass() const {return fMass;}
     float getTraction() const {return fTraction;}
     Velocity getVelocity() const {return fVelocity;}
-    sf::Shape& getShape() { return fShape; }
+    std::shared_ptr<sf::Shape> getShape() { return fShape; }
     int getID() const { return fID; }
 
 };
