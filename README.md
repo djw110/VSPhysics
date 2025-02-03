@@ -1,9 +1,9 @@
-### Welcome to VS-Physics
-##### By Daniel Whooley
+## Welcome to VS-Physics
+#### By Daniel Whooley
 VSPhysics is a container of multiple apps that simulate various physics scenarios.
 Currently I have created ***1***: *Basic Simulation*.
 
-#### Basic Simulation
+### Basic Simulation
 Basic Simulation is an application that consists of balls and walls. When run, the user is given an open workspace called an instance.
 In an instance, there are any number of "bodies" which are objects in the world. There are two types: ball and wall.
 
@@ -19,11 +19,11 @@ The include chain is also kept simple for code readability and performance.
 - A functional application that runs and validates user input (Takes which key the user presses and responds accordingly)
 - Zero bugs at time of submission.
 
-#### Dependencies & Citations
+### Dependencies & Citations
 This application is written entirely by Daniel Whooley with the exception of including the SFML Graphical Library.
 SFML allows basic shapes to be drawn into a render window on windows devices, and I have incorporated their library into VSPhysics to demonstrate.
 
-#### Score Proposal
+### Score Proposal
 **Main Program Complexity** :: 15-20 pts
 The main program expresses decent functionality, it opens an entire application window and game instance, handles a variety of events and functions (checks for user interaction with the close button, escape key) and also allows users to add to the game world by pressing A and inserting random bodies into the world.
 
@@ -43,5 +43,5 @@ I started in the *main branch* over a week ago however moved to the *visual* bra
 
 In total, I suggest this project earn ~40-45 points.
 
-#### Future Work
+### Future Work
 This entire project was designed to be worked on over the entire course of the semester. I have organized all my code in such a way that will allow me to add tons of features in the coming months, which is why there is not much functionality in the main program just yet. I will first implement the physics functions to be drawn on-screen in real time, I will allow players to specify the size shape and orientation of objects they add in, and more.
