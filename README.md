@@ -1,5 +1,5 @@
 ### Welcome to VS-Physics
-#####By Daniel Whooley
+##### By Daniel Whooley
 VSPhysics is a container of multiple apps that simulate various physics scenarios.
 Currently I have created ***1***: *Basic Simulation*.
 
