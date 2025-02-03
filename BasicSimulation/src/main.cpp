@@ -1,5 +1,6 @@
 #include "Instance.h"
 #include <random>
+#include <iostream>
 
 /**
  * TODO: Hotkeys (a for add, r for remove, h for hit, p for pause
@@ -17,10 +18,10 @@ int main() {
 			window.close();
 	};
 
-	//Unpause game unless manually paused (on maximize)
+	//Unpause game unless manually paused (on maximize) (*TBA*)
 	const auto onFocusGain = [&window](const sf::Event::FocusGained&) {	};
 
-	//Pause game on maximize
+	//Pause game on maximize, (*TBA*)
 	const auto onFocusLost = [&window](const sf::Event::FocusLost&) {	};
 
 	//Handle user hotkey input (1 key at a time)
@@ -30,6 +31,7 @@ int main() {
 				//Close and stop instance on input "Esc"
 				case sf::Keyboard::Scancode::Escape:
 					window.close();
+					std::cout << "Esc" << std::endl;
 					break;
 
 				case sf::Keyboard::Scancode::A:
@@ -38,6 +40,7 @@ int main() {
 					std::uniform_int_distribution<> distribx(1, 1199);
 					std::uniform_int_distribution<> distriby(1, 799);
 					mainInstance->addBall(Position(distribx(gen), distriby(gen), 0), 1, 1, 40);
+					std::cout << "A" << std::endl;
 					break;
 
 			}
