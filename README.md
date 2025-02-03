@@ -2,6 +2,7 @@
 #### By Daniel Whooley
 VSPhysics is a container of multiple apps that simulate various physics scenarios.
 Currently I have created ***1***: *Basic Simulation*.
+All of my source files are located in **BasicSimulation/src**
 
 ### Basic Simulation
 Basic Simulation is an application that consists of balls and walls. When run, the user is given an open workspace called an instance.
@@ -24,21 +25,21 @@ This application is written entirely by Daniel Whooley with the exception of inc
 SFML allows basic shapes to be drawn into a render window on windows devices, and I have incorporated their library into VSPhysics to demonstrate.
 
 ### Score Proposal
-**Main Program Complexity** :: 15-20 pts
+**Main Program Complexity :: 15-20 pts**
 The main program expresses decent functionality, it opens an entire application window and game instance, handles a variety of events and functions (checks for user interaction with the close button, escape key) and also allows users to add to the game world by pressing A and inserting random bodies into the world.
 
-**Concept: C++ Class** :: 20 pts
+**Concept: C++ Class :: 20 pts**
 The various classes and types created need to be very specific, and given their readability, modularity and level of abstraction, I suggest this score.
 
-**Concept: Overloaded operator, enum** :: 3-4 pts
+**Concept: Overloaded operator, enum :: 3-4 pts**
 I do have several overloaded functions, but no overloaded operators were necessary for this project. I do have a single enumerated type that is used, but not very extensively.
 
-**Style and Documentation** :: -0 pts
+**Style and Documentation :: -0 pts**
 I believe I have documented all ambiguous code and programmed in an organized efficient manner.
 
-**Video** :: -0 pts
+**Video :: -0 pts**
 
-**Lifespan of Project** :: -0 pts
+**Lifespan of Project :: -0 pts**
 I started in the *main branch* over a week ago however moved to the *visual* branch once I switched from CMake to a VS solution.
 
 In total, I suggest this project earn ~40-45 points.
