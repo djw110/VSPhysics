@@ -11,13 +11,9 @@ using std::vector;
 class Instance {
 private:
     
-    //List of pointers to every added body
     std::unordered_map<int, std::shared_ptr<Body>> fActiveBodies;
-
     float fGravScale;
     int fNextID = 0;
-
-    //Application window
     sf::RenderWindow& fWindow;
 
 public:

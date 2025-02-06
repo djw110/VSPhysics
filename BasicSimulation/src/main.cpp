@@ -28,7 +28,6 @@ int main() {
 	const auto onKeyPressed = [&window, &mainInstance](const sf::Event::KeyPressed& keyPressed){
 			switch (keyPressed.scancode) {
 
-				//Close and stop instance on input "Esc"
 				case sf::Keyboard::Scancode::Escape:
 					window.close();
 					std::cout << "Esc" << std::endl;

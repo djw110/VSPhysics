@@ -46,8 +46,7 @@ namespace utils {
     //Calculate the final velocity and acceleration of an object after colliding with another
     static Velocity calcCollide(const Body* pBody1, const std::shared_ptr<Body> pBody2) {
 
-        //Fetch necessary attributes for calculation (Position, speed, collision angle, mass)
-        //From both objects
+        //Attributes for calculation
         const float s1ix = pBody1->getPosition().getCenterX();
         const float s1iy = pBody1->getPosition().getCenterY();
         const float s2ix = pBody2->getPosition().getCenterX();
@@ -60,20 +59,18 @@ namespace utils {
         const float m1 = pBody1->getMass();
         const float m2 = pBody2->getMass();
 
-        //Calculate the initial velocity of each object parallel to the collision and perpendicular to the collision
+        //Initial velocity of each object parallel to the collision and perpendicular to the collision
         const float v1iPar = v1ix*cos(collisionAngle) + v1iy*sin(collisionAngle);
         const float v2iPar = v2ix*cos(collisionAngle) + v2iy*sin(collisionAngle);
         const float v1Perp = -1*v1ix*sin(collisionAngle) + v1iy*cos(collisionAngle);
         const float v2Perp = -1*v2ix*sin(collisionAngle) + v2iy*cos(collisionAngle);
 
-        //Calculate the new velocity of body1 parallel to the collision
+        //New velocity of body1 parallel to the collision
         const float v1fPar =( ( (m1 - m2) * v1iPar ) + (2 * m2 * v2iPar) ) / (m1 + m2);
 
-        //Calculate final velocity of body1
+        //Final values
         const float v1fx = ( v1fPar * cos(collisionAngle) ) - ( v1Perp * sin(collisionAngle) );
         const float v1fy = ( v1fPar * sin(collisionAngle) ) + ( v1Perp * cos(collisionAngle) );
-
-        //Calculate final acceleration of body1
         const float a1x = (v1fx - v1ix) / 0.000001f;
         const float a1y = (v1fy - v1iy) / 0.000001f;
 

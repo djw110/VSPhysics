@@ -14,9 +14,7 @@ class Body {
 
     protected:
 
-    /*Mass, Traction necessary for physical calculations.
-    Velocity contains Body's speed and acceleration over the x,y axes
-    Position contains Body's center position over the x,y axes
+    /*
     sf::Shape references the appearance of the body drawn onto the window
     ID is a unique ID to distinguish each body
     */
