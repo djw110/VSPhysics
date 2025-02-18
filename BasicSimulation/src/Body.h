@@ -12,7 +12,7 @@ Attributes associated with it's motion are stored in an associated Position and 
 */
 class Body {
 
-    protected:
+protected:
 
     /*
     sf::Shape references the appearance of the body drawn onto the window
@@ -25,10 +25,9 @@ class Body {
     std::shared_ptr<sf::Shape> fShape;
     int fID;
 
-    public:
+public:
 
-    //Used for rotate function
-    enum RotationDirection {CLOCK, COUNTERCLOCK};
+    enum RotationDirection { CLOCK, COUNTERCLOCK };
 
     Body(Position pPosition, float pMass, float pTraction, std::shared_ptr<sf::Shape> pShape, int pID);
 
@@ -42,14 +41,14 @@ class Body {
     void updateVelocity(Velocity& pNewVelocity);
 
     //Getters:
-    Position getPosition() const {return fPosition;}
+    int getID() const { return fID; }
     float getMass() const {return fMass;}
     float getTraction() const {return fTraction;}
-    Velocity getVelocity() const {return fVelocity;}
+    Position getPosition() const { return fPosition; }
+    Velocity getVelocity() const { return fVelocity; }
     std::shared_ptr<sf::Shape> getShape() { return fShape; }
-    int getID() const { return fID; }
 
-};
+    };
 
 
 #endif //BODY_H

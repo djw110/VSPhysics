@@ -9,9 +9,7 @@ Body::Body(Position pPosition, float pMass, float pTraction, std::shared_ptr<sf:
     fTraction(pTraction),
     fVelocity(Velocity(0, 0, 0, 0)),
     fShape(pShape),
-    fID(pID) {
-    fShape->setPosition({ fPosition.sfCenterX,fPosition.sfCenterY });
-}
+    fID(pID) {  }
 
 //Increment center position based on current position
 bool Body::incrementPosition(float pIncX, float pIncY) {

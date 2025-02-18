@@ -27,7 +27,7 @@ public:
     bool addWall(Position pPosition, float pTraction, float pLength);
 
     //Removes body from activeBodies
-    void removeBody(int pID);
+    void removeBody(int pXBound, int pYBound);
 };
 
 #endif //INSTANCE_H

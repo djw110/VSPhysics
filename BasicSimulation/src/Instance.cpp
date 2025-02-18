@@ -1,5 +1,6 @@
 #include "Instance.h"
 #include "Utils.h"
+#include <iostream>
 
 using std::vector;
 
@@ -32,7 +33,30 @@ bool Instance::addWall(Position pPosition, float pTraction, float pLength) {
     return true;
 }
 
-//Remove from activeBodies given ID
-void Instance::removeBody(int pID) {
-    fActiveBodies.erase(pID);
+
+//Check if the parameters xBound and yBound fall within the areas covered by any bodies in the instance. 
+// If so, remove them.
+void Instance::removeBody(int pXBound, int pYBound) {
+    for (auto it = fActiveBodies.begin(); it != fActiveBodies.end(); ) {
+        Position bodyPos = it->second->getPosition();
+        float bodyX = bodyPos.getCenterX();
+        float bodyY = bodyPos.getCenterY();
+        int ID = it->second->getID();
+
+        if (Ball* ballPtr = dynamic_cast<Ball*>(it->second.get())) {
+            float radius = ballPtr->getRadius();
+            if (pXBound >= bodyX - radius &&
+                pXBound <= bodyX + radius &&
+                pYBound >= bodyY - radius &&
+                pYBound <= bodyY + radius) {
+                it = fActiveBodies.erase(it);
+            }
+            else {
+                ++it;
+            }
+        }
+        else {
+            ++it;
+        }
+    }
 }
