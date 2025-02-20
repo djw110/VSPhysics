@@ -1,3 +1,5 @@
+#ifndef TEST_MODE
+
 #include "Instance.h"
 #include <random>
 #include <iostream>
@@ -146,3 +148,5 @@ float getInputFloat(string pMessage, int pLowerBound, int pUpperBound) {
 	}
 	return iFloat;
 }
+
+#endif

@@ -36,9 +36,6 @@
     <ClInclude Include="src\Ball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UIElement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Body.cpp">
@@ -48,6 +45,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Instance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testSuite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
