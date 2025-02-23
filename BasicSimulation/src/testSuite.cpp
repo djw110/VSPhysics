@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "Instance.h"
+#include "Utils.h"
 
 bool testBody();
 bool testInstance();
@@ -77,6 +78,11 @@ bool testInstance() {
         cout << "Failed addBall" << endl;
     }
 
+    if (testInstance->getNextID() != 1) {
+        passed = false;
+        cout << "IDs not incrementing" << endl;
+    }
+
     testInstance->addWall(*testPos2, 0.5, 20);
     if (testInstance->getBodyList().size() != 2 || testInstance->getBodyList()[1]->getTraction() != 0.5) {
         passed = false;
@@ -95,7 +101,38 @@ bool testInstance() {
 }
 
 bool testUtils() {
+
     bool passed = true;
+
+    const float cPI = 3.14159265358979323846f;
+
+    //Testing toRadians
+    float angleDeg = 90.0f;
+    if (utils::toRadians(angleDeg) != cPI / 2.0f) {
+        passed = false;
+        cout << "Failed toRadians function" << endl;
+    }
+
+    //Testing toDegrees
+    float angleRad = cPI / 2.0f;
+    if (utils::toDegrees(angleRad) != 90.0f) {
+        passed = false;
+        cout << "Failed toDegrees function" << endl;
+    }
+
+    //Testing standardAngle
+    float angleStandard = 4 * cPI; // 4 radians should standardize to 0 radians
+    if (std::abs(utils::standardAngle(angleStandard)) > 1e-6) {
+        passed = false;
+        cout << "Failed standardAngle function" << endl;
+    }
+
+    //Testing getCollisionAngle
+    float center1X = 0.0f, center1Y = 0.0f, center2X = 1.0f, center2Y = 1.0f;
+    if (utils::getCollisionAngle(center1X, center1Y, center2X, center2Y) != cPI / 4.0f) {
+        passed = false;
+        cout << "Failed getCollisionAngle function" << endl;
+    }
 
     return passed;
 }

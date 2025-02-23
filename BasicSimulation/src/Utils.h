@@ -7,7 +7,7 @@
 //Collection of frequently used static math functions
 namespace utils {
 
-    const float cPI = 3.14159265359f;
+    const float cPI = 3.14159265358979323846f;
 
     static float toRadians(float pAngle) {
         return pAngle * cPI / 180.0f;
@@ -17,22 +17,12 @@ namespace utils {
         return pAngle * 180.0f / cPI;
     }
 
-    //Calculate the movement of an object's X coordinate given an angle and magnitude
-    static float calcIncrementX(float pBaseX, float pAngle, float pMagnitude) {
-        return pBaseX + (cos(toRadians(pAngle)) * pMagnitude);
-    }
-
-    //Calculate the movement of an object's Y coordinate given an angle and magnitude
-    static float calcIncrementY(float pBaseY, float pAngle, float pMagnitude) {
-        return pBaseY + (sin(toRadians(pAngle)) * pMagnitude);
-    }
-
     //Standardize an angle to be between 0-2pi
     static float standardAngle(float pAngle) {
         while (pAngle < 0) {
             pAngle += 2 * cPI;
         }
-        while (pAngle >= 360){
+        while (pAngle >= 2 * cPI){
             pAngle -= 2 * cPI;
         }
         return pAngle;
