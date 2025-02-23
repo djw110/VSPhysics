@@ -28,6 +28,10 @@ public:
 
     //Removes body from activeBodies
     void removeBody(int pXBound, int pYBound);
+
+    std::unordered_map<int, std::shared_ptr<Body>> getBodyList() { return fActiveBodies; }
+    float getGravScale() { return fGravScale; }
+    int getNextID() { return fNextID; }
 };
 
 #endif //INSTANCE_H

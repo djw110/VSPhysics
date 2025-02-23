@@ -16,6 +16,8 @@ public:
         Body(pPosition, 1, pTraction, std::make_shared<sf::RectangleShape>(sf::Vector2f(pLength, 1)), pID),
         fLength(pLength){  }
 
+    float getLength() { return fLength; }
+
  };
 
 #endif //WALL_H
