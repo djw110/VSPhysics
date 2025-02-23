@@ -17,7 +17,7 @@ The include chain is also kept simple for code readability and performance.
 
 - Extensive use of abstract classes, pointers, references, and dividing headers and source properly
 - An enumerated type used for determining rotation direction of a body
-- A functional application that runs and validates user input (Takes which key the user presses and responds accordingly)
+- A functional application that runs and validates user input: Takes key inputs and text inputs and validates if they are valid values
 - Zero bugs at time of submission.
 
 ### Dependencies & Citations
@@ -25,14 +25,15 @@ This application is written entirely by Daniel Whooley with the exception of inc
 SFML allows basic shapes to be drawn into a render window on windows devices, and I have incorporated their library into VSPhysics to demonstrate.
 
 ### Score Proposal
-**Main Program Complexity :: 15-20 pts**
-The main program expresses decent functionality, it opens an entire application window and game instance, handles a variety of events and functions (checks for user interaction with the close button, escape key) and also allows users to add to the game world by pressing A and inserting random bodies into the world.
+**Main Program Complexity :: 35-40 pts**
+The main programs offers extensive interactibility and uses a variety of concepts from Mod 2. It allows users to add various objects to the game world, validates their input, and produces graphical output.
+To accomplish this, several levels of class inheritance and component classes were used to create an organized and readable program.
 
-**Concept: C++ Class :: 20 pts**
-The various classes and types created need to be very specific, and given their readability, modularity and level of abstraction, I suggest this score.
+**Concept: Is-A or Has-A class relationship :: 20 pts**
+Each class depends on eachother in some form, developing an efficient relationship of 7 classes working together. Over three classes have components, and at least 2 classes inherit from Body.
 
-**Concept: Overloaded operator, enum :: 3-4 pts**
-I do have several overloaded functions, but no overloaded operators were necessary for this project. I do have a single enumerated type that is used, but not very extensively.
+**Concept: File input/output, enum :: 6-7 pts**
+A text file is not necessarily edited in this program, however the program takes input from the keystrokes of the computer and outputs images to a graphics file to output in the render-window, which requires extensive validation.
 
 **Style and Documentation :: -0 pts**
 I believe I have documented all ambiguous code and programmed in an organized efficient manner.
@@ -40,9 +41,9 @@ I believe I have documented all ambiguous code and programmed in an organized ef
 **Video :: -0 pts**
 
 **Lifespan of Project :: -0 pts**
-I started in the *main branch* over a week ago however moved to the *visual* branch once I switched from CMake to a VS solution.
+This project has been worked on since module 1 and I have added to it consistently throughout module 2 as well.
 
-In total, I suggest this project earn ~40-45 points.
+In total, I suggest this project earn ~60-65 points.
 
 ### Future Work
 This entire project was designed to be worked on over the entire course of the semester. I have organized all my code in such a way that will allow me to add tons of features in the coming months, which is why there is not much functionality in the main program just yet. I will first implement the physics functions to be drawn on-screen in real time, I will allow players to specify the size shape and orientation of objects they add in, and more.
