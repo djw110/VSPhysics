@@ -24,26 +24,5 @@ The include chain is also kept simple for code readability and performance.
 This application is written entirely by Daniel Whooley with the exception of including the SFML Graphical Library.
 SFML allows basic shapes to be drawn into a render window on windows devices, and I have incorporated their library into VSPhysics to demonstrate.
 
-### Score Proposal
-**Main Program Complexity :: 35-40 pts**
-The main programs offers extensive interactibility and uses a variety of concepts from Mod 2. It allows users to add various objects to the game world, validates their input, and produces graphical output.
-To accomplish this, several levels of class inheritance and component classes were used to create an organized and readable program.
-
-**Concept: Is-A or Has-A class relationship :: 20 pts**
-Each class depends on eachother in some form, developing an efficient relationship of 7 classes working together. Over three classes have components, and at least 2 classes inherit from Body.
-
-**Concept: File input/output, enum :: 6-7 pts**
-A text file is not necessarily edited in this program, however the program takes input from the keystrokes of the computer and outputs images to a graphics file to output in the render-window, which requires extensive validation.
-
-**Style and Documentation :: -0 pts**
-I believe I have documented all ambiguous code and programmed in an organized efficient manner.
-
-**Video :: -0 pts**
-
-**Lifespan of Project :: -0 pts**
-This project has been worked on since module 1 and I have added to it consistently throughout module 2 as well.
-
-In total, I suggest this project earn ~60-65 points.
-
 ### Future Work
-This entire project was designed to be worked on over the entire course of the semester. I have organized all my code in such a way that will allow me to add tons of features in the coming months, which is why there is not much functionality in the main program just yet. I will first implement the physics functions to be drawn on-screen in real time, I will allow players to specify the size shape and orientation of objects they add in, and more.
+I intend to combine the graphical framework I've created with the mathematical functions I've developed to simulate balls bouncing in a 2D space.
